@@ -1,4 +1,23 @@
-body{
+:root {
+    /* Cores */
+    --primary-color: #D53569;
+    --secondary-color: #DAAC51;
+    --text-color-light: #fff;
+    --text-color-dark: #000;
+    --border-color: #ffffff9d;
+    --button-bg-light: #ffffffff; /* Transparente com opacidade */
+
+    /* Espaçamento */
+    --padding-left-base: 125px;
+    --gap-menu: 40px;
+
+    /* Transições */
+    --transition-speed-fast: 250ms;
+    --transition-speed-normal: 300ms;
+    --transition-ease: ease-in-out;
+}
+
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,28 +27,31 @@ body{
 .container {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to right, #D53569, #DAAC51);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    display: flex;
+    flex-direction: column;
 }
 
 .container header {
     display: flex;
     width: 100%;
-    height: 10%;
-    border-bottom: 1px solid #fff;
+    height: 60px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
 }
 
 .container header .esquerda {
     width: 50%;
-    height: auto;
-    padding-left: 125px;
+    /* height: auto; - Removido: 'auto' é o padrão e geralmente não é necessário quando usando flexbox para alinhamento */
+    padding-left: var(--padding-left-base);
     display: flex;
     align-items: center;
-    color: #fff;
+    color: var(--text-color-light);
 }
 
 .container header .direita {
     width: 50%;
-    height: auto;
+    /* height: auto; - Removido */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,42 +61,74 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: var(--gap-menu);
 }
+
 .container header .direita nav a {
     text-decoration: none;
-    color: #fff;
-    font-size: 25px;
+    color: var(--text-color-light);
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+    transition: var(--transition-speed-fast) var(--transition-ease);
+}
+
+.container header .direita nav a:hover {
+    border: 1px solid var(--text-color-light);
+}
+
+.container header .direita nav a:nth-child(4) {
+    background-color: var(--button-bg-light);
+    color: var(--text-color-dark);
+    transition: var(--transition-speed-normal) all var(--transition-ease);
+}
+
+.container header .direita nav a:nth-child(4):hover {
+    background-color: transparent;
+    color: var(--text-color-light);
 }
 
 .container main {
-    display: flex;
     width: 100%;
-    height: 80%;
+    flex-grow: 1;
+    display: flex;
 }
 
 .container main .esquerda {
     width: 45%;
-    height: auto;
+    height: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    padding-left: 125px;
-    padding-top: 70px;
+    padding-left: var(--padding-left-base);
 }
 
-.container main .esquerda p{
-    color: #fff;
-    font-size: 20px;
+.container main .esquerda p,
+.container main .esquerda h1 {
+    color: var(--text-color-light);
 }
 
-.container main .esquerda h1{
-    color: #fff;
-    font-size: 50px;
+.container main .esquerda h1 {
+    line-height: 0.9em; /* Geralmente 0% não é o ideal para line-height; use um valor em 'em' ou 'px' ou um fator */
+    font-size: 30px;
 }
 
-.container main .direita{
+.container main .esquerda button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--button-bg-light);
+    font-weight: bold;
+    color: var(--text-color-dark);
+    cursor: pointer;
+}
+
+.container main .direita {
     width: 55%;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
