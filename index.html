@@ -4,37 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Primeira aula Fly</title>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="esquerda">
-                <h1>LANDING</h1>
+    <div class="min-h-screen bg-gray-100 font-sans">
+        <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                LANDING
             </div>
-            <div class="direita">
-                <nav>
-                    <a href="#" class="active">home</a>
-                    <a href="#">sobre</a>
-                    <a href="#">contato</a>
-                    <a href="#">login</a>
+            <div>
+                <nav class="space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 font-medium active:text-blue-600">home</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 font-medium">sobre</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 font-medium">contato</a>
+                    <a href="./pages/login/index.html" class="text-gray-600 hover:text-blue-600 font-medium">login</a>
                 </nav>
             </div>
         </header>
-        <main>
-            <div class="esquerda">
-                <p>What business are you?</p>
-                <h1>Main Hero</h1>
-                <h1>Message to Sell</h1>
-                <h1>Yourself!</h1>
-                <p>Sub-hero message not too long and not too short.
-                    Make it just right.</p>
-                <button>Subscribe</button>
+        <main class="flex flex-col lg:flex-row items-center justify-center py-12 px-6 lg:px-12">
+            <div class="text-center lg:text-left lg:w-1/2 mb-8 lg:mb-0">
+                <p class="text-lg text-gray-600 mb-2">What business are you?</p>
+                <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+                    Main Hero
+                </h1>
+                <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+                    Message to Sell
+                </h1>
+                <h1 class="text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+                    Yourself!
+                </h1>
+                <p class="text-xl text-gray-700 mb-8 max-w-md mx-auto lg:mx-0">
+                    Sub-hero message not too long and not too short. Make it just right.
+                </p>
+                <button
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Subscribe
+                </button>
             </div>
-            <div class="direita">
-                <img width="500px" src="./assets/usability-testing-animate.svg" alt="imagem-animada">
+            <div class="lg:w-1/2 flex justify-center">
+                <img class="max-w-full h-auto" src="./assets/usability-testing-animate.svg" alt="imagem-animada">
             </div>
         </main>
     </div>
