@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>calculadora - Imc</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3094/3094848.png">
+</head>
+
+<body>
+    <div class="w-full h-screen flex bg-[#18171C] text-white">
+        <div class="w-[50%] h-full flex items-center justify-center">
+            <img width="550px" src="./images/workout-animate.svg" alt="imagem de exercicio">
+        </div>
+        <div class="w-[50%] h-full flex items-center justify-center">
+            <div class="w-[500px] h-auto bg-[#262626] rounded-lg flex flex-col p-[15px]">
+                <div class="w-full flex flex-col ">
+                    <h1 class="text-3xl font-bold ">Calculadora de IMC</h1>
+                    <div class="w-[150px] h-[4px] bg-[#D31818FF] rounded-lg"></div>
+                </div>
+                <div class="w-full flex flex-col pt-[15px] gap-[20px]">
+                    <div class="INPUT w-full flex flex-col">
+                        <label class="font-bold text-md" for="peso">Peso em KG</label>
+                        <div class="w-full flex bg-[#3f3f47] h-[50px] rounded-md mt-[5px]">
+                            <div class="w-[10%] h-full flex items-center justify-center">
+                                <i class="fa-solid fa-weight-hanging "></i>
+                            </div>
+                            <input type="number" id="peso" class="w-[80%] h-full outline-none bg-transparent">
+                            <div class="w-[10%] h-full flex items-center justify-center font-bold">KG</div>
+                        </div>
+                    </div>
+                    <div class="INPUT w-full flex flex-col">
+                        <label class="font-bold text-md" for="altura">Altura em Metros</label>
+                        <div class="w-full flex bg-[#3f3f47] h-[50px] rounded-md mt-[5px]">
+                            <div class="w-[10%] h-full flex items-center justify-center">
+                                <i class="fa-solid fa-ruler"></i>
+                            </div>
+                            <input type="number" id="altura" class="w-[80%] h-full outline-none bg-transparent">
+                            <div class="w-[10%] h-full flex items-center justify-center font-bold">M</div>
+                        </div>
+                    </div>
+                    <button id="botao"
+                        class="border-2 border-transparent w-full h-[50px] bg-[#D31818FF] flex items-center justify-center rounded-md font-bold text-xl cursor-pointer hover:bg-transparent hover:border-2 hover:border-[#D31818FF] hover: duration-300 hover:text-[#D31818FF]">Calcular</button>
+                </div>
+                <div class="w-full flex flex-col py-[15px] hidden" id="resultado">
+                    <div class="w-full h-[1px] bg-[#3f3f47]"></div>
+                    <div class="w-full h-[100px] flex">
+                        <div class="w-[35%] h-full flex flex-col items-center justify-center">
+                            <h1 id="res-imc" class="font-bold text-3xl text-[#D31818FF]"></h1>
+                            <p>Seu IMC</p>
+                        </div>
+                        <div class="w-[65%] h-full flex items-center pl-[15px]">
+                            <p id="res-descricao"></p>
+                        </div>
+                    </div>
+                    <div class="w-full h-[1px] bg-[#3f3f47]"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calc.js"></script>
+</body>
+
+</html>
